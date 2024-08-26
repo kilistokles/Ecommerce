@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Formulario de Cadastro de produto
+{% endblock %}
+
+{% block conteudo %}
+<body class="text-center">
+    <div class="container">
+        <br>
+        <img class="mb-4" src="https://cdn-icons-png.flaticon.com/512/3827/3827340.png", style="width: 60px">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Cadastre o Novo Produto
+        </h1>
+        <form method="POST" class="form-register" style="color: whitesmoke;">
+
+            {{ form.hidden_tag() }}
+
+            {{ form.nome.label() }}
+            {{ form.nome(class="form-control", placeholder="Informe o nome do Produto") }}
+
+            {{ form.preco.label() }}
+            {{ form.preco(class="form-control", placeholder="Informe o Preco do Produto") }}
+
+            {{ form.cod_barra.label() }}
+            {{ form.cod_barra(class="form-control", placeholder="Informe o codigo de barra") }}
+
+            {{ form.descricao.label() }}
+            {{ form.descricao(class="form-control", placeholder="Descrição do produto", rows=4) }}
+
+
+            <br>
+            <div class="d-grid">
+                {{ form.submit(class="btn btn-lg btn-success") }}
+            </div>
+            <br>
+        </form>
+    </div>
+</body>
+{% endblock %}
